@@ -1,0 +1,9 @@
+def print_numbers_up_to_N(N):
+    for i in range(1, N + 1):
+        print(i, end=" ")
+
+# Taking input
+N = int(input().strip())
+
+# Calling the function
+print_numbers_up_to_N(N)
