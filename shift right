@@ -1,0 +1,17 @@
+def right_shift_array(arr, shift):
+    n = len(arr)
+    shift = shift % n  # Calculate the effective number of shifts
+
+    # Perform right shifting 'shift' times
+    arr = arr[-shift:] + arr[:-shift]
+    return arr
+
+# Input
+N, X = map(int, input().split())
+A = list(map(int, input().split()))
+
+# Calling the function to perform right shifting of array elements
+result = right_shift_array(A, X)
+
+# Printing the resulting array after shifting
+print(*result)
