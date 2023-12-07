@@ -1,0 +1,14 @@
+def concatenate_arrays(A, B):
+    C = B + A
+    return C
+
+# Input
+N = int(input())
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+# Calling the function to concatenate arrays A and B
+result_array = concatenate_arrays(A, B)
+
+# Printing the concatenated array elements separated by space
+print(*result_array)
