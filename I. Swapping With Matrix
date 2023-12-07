@@ -1,0 +1,39 @@
+Given a matrix A
+ of size N∗N
+. Print the Matrix after doing the following operations:
+
+swap row X
+ with row Y
+.
+swap column X
+ with column Y
+.
+Note: Solve this problem using function.
+
+Input
+First line contains three numbers N
+, X
+ and Y
+ (1≤N≤500,1≤X,Y≤N)
+.
+
+Next N
+ lines contain N
+ numbers (−104≤Ai,j≤104)
+.
+
+Output
+Print the answer required above.
+
+Example
+inputCopy
+4 3 1
+1 2 3 -5
+-5 4 0 3
+7 7 1 2
+40 6 5 11
+outputCopy
+1 7 7 2 
+0 4 -5 3 
+3 2 1 -5 
+5 6 40 11 
