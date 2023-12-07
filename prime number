@@ -1,0 +1,29 @@
+import math
+
+def is_prime(N):
+    if N <= 1:
+        return "NO"
+
+    if N == 2:
+        return "YES"
+
+    if N % 2 == 0:
+        return "NO"
+
+    sqrt_N = int(math.sqrt(N))
+    for i in range(3, sqrt_N + 1, 2):
+        if N % i == 0:
+            return "NO"
+
+    return "YES"
+
+# Taking input for the number of test cases
+T = int(input().strip())
+
+# Loop through each test case
+for _ in range(T):
+    # Taking input for each test case
+    N = int(input().strip())
+
+    # Calling the function and printing the result
+    print(is_prime(N))
