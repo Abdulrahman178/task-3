@@ -1,0 +1,22 @@
+def power(base, exponent):
+    result = 1
+    while exponent > 0:
+        if exponent % 2 != 0:
+            result *= base
+        base *= base
+        exponent //= 2
+    return result
+
+def calculate_equation(X, N):
+    S = 0
+    for i in range(0, N + 1, 2):
+        term = power(X, i)
+        S += term
+    return S
+
+# Taking input
+X, N = map(int, input().split())
+
+# Calling the function and printing the result
+result = calculate_equation(X, N)
+print(result)
