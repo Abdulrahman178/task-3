@@ -1,0 +1,38 @@
+# Function to calculate area of rectangle
+def rectangle_area(x1, y1, x2, y2):
+    return abs(x2 - x1) * abs(y2 - y1)
+
+# Function to calculate intersection area of two rectangles
+def intersection_area(x1, y1, x2, y2, x3, y3, x4, y4):
+    dx = min(x2, x4) - max(x1, x3)
+    dy = min(y2, y4) - max(y1, y3)
+    if dx < 0 or dy < 0:
+        return 0
+    return dx * dy
+
+# Function to calculate common area shared between all rectangles
+def common_area(rectangles):
+    common = rectangles[0]
+    for i in range(1, len(rectangles)):
+        common[0] = max(common[0], rectangles[i][0])
+        common[1] = max(common[1], rectangles[i][1])
+        common[2] = min(common[2], rectangles[i][2])
+        common[3] = min(common[3], rectangles[i][3])
+
+    total_area = rectangle_area(common[0], common[1], common[2], common[3])
+    for i in range(len(rectangles)):
+        total_area -= max(0, intersection_area(*common, *rectangles[i]))
+
+    return total_area
+
+# Input processing
+T = int(input())  # Number of test cases
+for case in range(1, T + 1):
+    N = int(input())  # Number of rectangles for this test case
+    rectangles = []
+    for _ in range(N):
+        x1, y1, x2, y2 = map(int, input().split())
+        rectangles.append([x1, y1, x2, y2])
+
+    result = common_area(rectangles)
+    print(f"Case #{case}: {result}")
