@@ -1,0 +1,24 @@
+# Function to calculate factorial
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+# Function to calculate combination (NCR)
+def nCr(A, B):
+    return factorial(A) // (factorial(B) * factorial(A - B))
+
+# Function to calculate permutation (NPR)
+def nPr(A, B):
+    return factorial(A) // factorial(A - B)
+
+# Taking input for A and B
+A, B = map(int, input().split())
+
+# Calculating NCR and NPR
+nCr_result = nCr(A, B)
+nPr_result = nPr(A, B)
+
+# Printing NCR and NPR separated by a space
+print(nCr_result, nPr_result)
