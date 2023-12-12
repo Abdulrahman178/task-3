@@ -1,0 +1,19 @@
+import math
+
+# Function to calculate GCD
+def gcd(a, b):
+    return math.gcd(a, b)
+
+# Function to calculate LCM
+def lcm(a, b):
+    return abs(a * b) // math.gcd(a, b)
+
+# Taking input for A and B
+A, B = map(int, input().split())
+
+# Calculating GCD and LCM
+gcd_result = gcd(A, B)
+lcm_result = lcm(A, B)
+
+# Printing GCD and LCM separated by a space
+print(gcd_result, lcm_result)
