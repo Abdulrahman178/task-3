@@ -1,0 +1,12 @@
+def find_qth_element(A, B, Q):
+    if Q % 2 == 1:  # If Q is odd
+        return A
+    else:  # If Q is even
+        return A ^ B
+
+# Taking input
+A, B, Q = map(int, input().split())
+
+# Finding and printing the Qth element
+result = find_qth_element(A, B, Q)
+print(result)
