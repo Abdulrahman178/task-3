@@ -1,0 +1,32 @@
+def baseX_to_decimal(N, X):
+    decimal_value = 0
+    power = len(N) - 1
+    for digit in N:
+        if digit.isdigit():
+            decimal_value += int(digit) * (X ** power)
+        else:
+            decimal_value += (ord(digit) - 55) * (X ** power)
+        power -= 1
+    return decimal_value
+
+def decimal_to_baseX(N, X):
+    result = ""
+    while N > 0:
+        remainder = N % X
+        if remainder < 10:
+            result = str(remainder) + result
+        else:
+            result = chr(remainder + 55) + result
+        N //= X
+    return result
+
+T = int(input())
+N, X = input().split()
+
+if T == 1:
+    decimal_value = baseX_to_decimal(N, int(X))
+    print(decimal_value)
+elif T == 2:
+    decimal_N = int(N)
+    baseX_value = decimal_to_baseX(decimal_N, int(X))
+    print(baseX_value)
