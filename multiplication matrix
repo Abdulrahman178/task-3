@@ -1,0 +1,37 @@
+# Function to perform matrix multiplication
+def matrix_multiplication(A, B):
+    result = []
+    for i in range(len(A)):
+        row = []
+        for j in range(len(B[0])):
+            val = 0
+            for k in range(len(B)):
+                val += A[i][k] * B[k][j]
+            row.append(val)
+        result.append(row)
+    return result
+
+# Taking input for matrix A
+RA, CA = map(int, input().split())
+A = []
+for _ in range(RA):
+    row = list(map(int, input().split()))
+    A.append(row)
+
+# Taking input for matrix B
+RB, CB = map(int, input().split())
+B = []
+for _ in range(RB):
+    row = list(map(int, input().split()))
+    B.append(row)
+
+# Check if the matrices can be multiplied
+if CA != RB:
+    print("Matrices cannot be multiplied")
+else:
+    # Perform matrix multiplication
+    result = matrix_multiplication(A, B)
+
+    # Printing the result
+    for row in result:
+        print(*row)
