@@ -1,0 +1,10 @@
+# Read input number
+N = int(input())
+
+# Perform operations
+addition_result = N + 9999
+multiplication_result = N * 9999
+
+# Print the results
+print(addition_result)
+print(multiplication_result)
